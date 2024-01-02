@@ -16,7 +16,12 @@ class Order extends Model
         'total_price',
     ];
 
-    protected $cats = [
+    protected $casts = [ //memberikan penekanan bahwa kolom medicines bertipe data array
         'medicines' => 'array',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
